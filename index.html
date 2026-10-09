@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viass Digital - Portal Akses Materi & Link Hub</title>
+    
+    <!-- External Dependencies: Tailwind CSS, Lucide Icons, Google Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: {
+                            bg: '#0B0F17',
+                            card: '#111827',
+                            border: '#1F2937',
+                            hover: '#1E293B'
+                        },
+                        neon: {
+                            emerald: '#10B981',
+                            glow: '#059669',
+                            indigo: '#6366F1'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0B0F17;
+            color: #F3F4F6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .glow-emerald {
+            box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.3);
+        }
+
+        .glow-indigo {
+            box-shadow: 0 0 25px -5px rgba(99, 102, 241, 0.3);
+        }
+
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #111827;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #374151;
+            border-radius: 9999px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #10B981;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+        }
+        .accordion-content.active {
+            max-height: 1000px;
+            transition: max-height 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-gray-100 min-h-screen flex flex-col antialiased bg-grid-pattern">
+
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-dark-bg/80 border-b border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-indigo-600 flex items-center justify-center font-bold text-xl text-white shadow-lg glow-emerald">
+                    VD
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-extrabold text-xl tracking-tight bg-gradient-to-r from-white via-gray-200 to-emerald-400 bg-clip-text text-transparent">
+                        Viass Digital<span class="text-emerald-400">.</span>
+                    </span>
+                    <span class="text-[10px] text-gray-400 font-medium tracking-widest uppercase -mt-1">Link Hub & Manager</span>
+                </div>
+            </div>
+
+            <!-- Action Controls -->
+            <div class="flex items-center space-x-2 sm:space-x-3">
+                <a href="#materi-section" class="inline-flex items-center space-x-2 px-3.5 py-2 rounded-lg bg-dark-card border border-dark-border text-xs sm:text-sm font-medium hover:border-emerald-500/50 hover:text-emerald-400 transition">
+                    <i data-lucide="book-open" class="w-4 h-4"></i>
+                    <span>Daftar Materi</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div id="toast" class="fixed bottom-5 right-5 z-50 hidden transform transition-all duration-300 bg-emerald-500 text-white px-4 py-3 rounded-xl shadow-2xl flex items-center space-x-2 border border-emerald-400">
+        <i data-lucide="check-circle" class="w-5 h-5"></i>
+        <span id="toastMessage" class="text-xs sm:text-sm font-medium">Link berhasil disalin!</span>
+    </div>
+
+    <main class="flex-grow">
+        <section class="relative py-10 md:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center overflow-hidden">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute top-1/4 right-10 w-72 h-72 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="relative z-10 max-w-3xl mx-auto space-y-5">
+                <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold tracking-wide uppercase">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>Portal Akses & Link Materi</span>
+                </div>
+
+                <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
+                    Akses Materi & Link Jualan <br class="hidden sm:inline"/>
+                    <span class="bg-gradient-to-r from-emerald-400 via-teal-300 to-indigo-400 bg-clip-text text-transparent">
+                        Viass Digital
+                    </span>
+                </h1>
+
+                <p class="text-gray-400 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+                    Klik materi di bawah ini untuk menuju link grup, video tutorial, drive, atau tautan transaksi.
+                </p>
+
+                <!-- Search Input & Category Filters -->
+                <div class="pt-4 max-w-xl mx-auto space-y-4">
+                    <div class="relative">
+                        <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"></i>
+                        <input type="text" id="searchInput" onkeyup="renderModules()" placeholder="Cari materi atau topik (misal: Lynk.id, WhatsApp, Komisi)..." 
+                               class="w-full pl-12 pr-4 py-3.5 bg-dark-card/90 border border-dark-border rounded-xl text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition placeholder-gray-500 shadow-xl">
+                    </div>
+
+                    <div class="flex flex-wrap items-center justify-center gap-2 pt-1" id="categoryFilters">
+                        <button onclick="setCategoryFilter('all')" id="btn-cat-all" class="category-btn active px-3.5 py-1.5 rounded-lg text-xs font-medium bg-emerald-500 text-white border border-emerald-500 transition">Semua</button>
+                        <button onclick="setCategoryFilter('Panduan LYNK.ID')" id="btn-cat-panduan" class="category-btn px-3.5 py-1.5 rounded-lg text-xs font-medium bg-dark-card text-gray-400 border border-dark-border hover:border-gray-600 transition">Panduan LYNK.ID</button>
+                        <button onclick="setCategoryFilter('Tips & Strategi')" id="btn-cat-tips" class="category-btn px-3.5 py-1.5 rounded-lg text-xs font-medium bg-dark-card text-gray-400 border border-dark-border hover:border-gray-600 transition">Tips & Strategi</button>
+                        <button onclick="setCategoryFilter('Bonus Exclusive')" id="btn-cat-bonus" class="category-btn px-3.5 py-1.5 rounded-lg text-xs font-medium bg-dark-card text-gray-400 border border-dark-border hover:border-gray-600 transition">Bonus Exclusive</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="materi-section" class="py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 pb-4 border-b border-dark-border gap-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                        <i data-lucide="layers" class="text-emerald-400 w-6 h-6"></i>
+                        Daftar Modul & Akses Link
+                    </h2>
+                    <p class="text-xs sm:text-sm text-gray-400 mt-1">Pilih modul yang ingin diakses atau salin link untuk dibagikan.</p>
+                </div>
+                <div class="text-xs text-gray-400 bg-dark-card px-3 py-2 rounded-lg border border-dark-border self-start md:self-auto flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                    <span>Total Materi: <strong id="totalModulesCount" class="text-emerald-400">0</strong> Item</span>
+                </div>
+            </div>
+
+            <!-- Dynamic Modules Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="modulesGrid">
+                <!-- Javascript will render module cards here -->
+            </div>
+        </section>
+
+        <section class="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <!-- Action Checklist -->
+                <div class="bg-dark-card border border-dark-border rounded-2xl p-6 sm:p-8 relative overflow-hidden">
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <span class="text-xs font-semibold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded border border-amber-500/20">🔥 Action Plan</span>
+                            <h3 class="text-xl font-bold text-white mt-2">Checklist: Tips Pecah Telur di LYNK.ID</h3>
+                        </div>
+                        <div class="text-right">
+                            <span id="progressText" class="text-xs text-gray-400">0 / 5 Selesai</span>
+                            <div class="w-24 bg-gray-800 h-2 rounded-full mt-1 overflow-hidden">
+                                <div id="progressBar" class="bg-gradient-to-r from-amber-400 to-emerald-400 h-full w-0 transition-all duration-300"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="text-xs text-gray-400 mb-4">Centang setiap langkah yang sudah kamu selesaikan untuk memantau progres kamu:</p>
+
+                    <div class="space-y-3 custom-scrollbar max-h-80 overflow-y-auto pr-2">
+                        <label class="flex items-start space-x-3 p-3 rounded-xl bg-dark-bg/60 border border-dark-border/80 hover:border-emerald-500/30 cursor-pointer transition">
+                            <input type="checkbox" class="checklist-item mt-0.5 rounded text-emerald-500 focus:ring-emerald-500 bg-gray-800 border-gray-700 w-4 h-4" onchange="updateProgress()">
+                            <span class="text-xs text-gray-300">Gunakan Foto Profil dengan Wajah Jelas & Pencahayaan Bagus.</span>
+                        </label>
+                        <label class="flex items-start space-x-3 p-3 rounded-xl bg-dark-bg/60 border border-dark-border/80 hover:border-emerald-500/30 cursor-pointer transition">
+                            <input type="checkbox" class="checklist-item mt-0.5 rounded text-emerald-500 focus:ring-emerald-500 bg-gray-800 border-gray-700 w-4 h-4" onchange="updateProgress()">
+                            <span class="text-xs text-gray-300">Tulis Bio Singkat yang Menjelaskan Manfaat Produk Kamu.</span>
+                        </label>
+                        <label class="flex items-start space-x-3 p-3 rounded-xl bg-dark-bg/60 border border-dark-border/80 hover:border-emerald-500/30 cursor-pointer transition">
+                            <input type="checkbox" class="checklist-item mt-0.5 rounded text-emerald-500 focus:ring-emerald-500 bg-gray-800 border-gray-700 w-4 h-4" onchange="updateProgress()">
+                            <span class="text-xs text-gray-300">Buat Minimum 1 Produk Digital Gratisan (Lead Magnet) untuk Kumpul Lead.</span>
+                        </label>
+                        <label class="flex items-start space-x-3 p-3 rounded-xl bg-dark-bg/60 border border-dark-border/80 hover:border-emerald-500/30 cursor-pointer transition">
+                            <input type="checkbox" class="checklist-item mt-0.5 rounded text-emerald-500 focus:ring-emerald-500 bg-gray-800 border-gray-700 w-4 h-4" onchange="updateProgress()">
+                            <span class="text-xs text-gray-300">Sematkan Link Lynk.id Kamu di Bio Instagram & TikTok.</span>
+                        </label>
+                        <label class="flex items-start space-x-3 p-3 rounded-xl bg-dark-bg/60 border border-dark-border/80 hover:border-emerald-500/30 cursor-pointer transition">
+                            <input type="checkbox" class="checklist-item mt-0.5 rounded text-emerald-500 focus:ring-emerald-500 bg-gray-800 border-gray-700 w-4 h-4" onchange="updateProgress()">
+                            <span class="text-xs text-gray-300">Konsisten Posting Konten Edukasi Singkat (Reels/TikTok) Minimal 1x Sehari.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Accordion Playbook -->
+                <div class="bg-dark-card border border-dark-border rounded-2xl p-6 sm:p-8">
+                    <div class="mb-6">
+                        <span class="text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/20">✅ Playbook Penjualan</span>
+                        <h3 class="text-xl font-bold text-white mt-2">10 Step Cepat Bikin Produk Digital Laku</h3>
+                    </div>
+
+                    <div class="space-y-3" id="accordionContainer">
+                        <div class="border border-dark-border rounded-xl bg-dark-bg/50 overflow-hidden">
+                            <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-4 text-left text-xs sm:text-sm font-semibold text-white hover:text-emerald-400 transition">
+                                <span>1. Riset Masalah Utama Audience</span>
+                                <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"></i>
+                            </button>
+                            <div class="accordion-content px-4 pb-4 text-xs text-gray-400 leading-relaxed border-t border-dark-border/40 pt-3">
+                                Jangan membuat produk berdasarkan asumsi sendiri. Cari tahu pertanyaan atau keluhan yang paling sering muncul di komentar media sosial audiens kamu.
+                            </div>
+                        </div>
+
+                        <div class="border border-dark-border rounded-xl bg-dark-bg/50 overflow-hidden">
+                            <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-4 text-left text-xs sm:text-sm font-semibold text-white hover:text-emerald-400 transition">
+                                <span>2. Buat Headline Landing Page yang Memikat</span>
+                                <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"></i>
+                            </button>
+                            <div class="accordion-content px-4 pb-4 text-xs text-gray-400 leading-relaxed border-t border-dark-border/40 pt-3">
+                                Gunakan formula headline: <em>[Hasil Yang Diinginkan]</em> Tanpa Harus <em>[Hambatan/Ketakutan]</em>. Contoh: "Laris Manis Jualan Produk Digital Tanpa Perlu Bikin Web Sendiri".
+                            </div>
+                        </div>
+
+                        <div class="border border-dark-border rounded-xl bg-dark-bg/50 overflow-hidden">
+                            <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-4 text-left text-xs sm:text-sm font-semibold text-white hover:text-emerald-400 transition">
+                                <span>3. Tampilkan Social Proof & Testimoni</span>
+                                <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"></i>
+                            </button>
+                            <div class="accordion-content px-4 pb-4 text-xs text-gray-400 leading-relaxed border-t border-dark-border/40 pt-3">
+                                Calon pembeli lebih percaya bukti nyata. Kumpulkan tangkapan layar chat kepuasan atau hasil pembeli pertama untuk ditampilkan di halaman Lynk.id kamu.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-dark-border bg-dark-bg py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center space-x-2">
+                <div class="w-6 h-6 rounded-md bg-emerald-500 flex items-center justify-center font-bold text-xs text-white">VD</div>
+                <span class="text-xs font-semibold text-gray-300">Viass Digital &copy; 2026. All rights reserved.</span>
+            </div>
+            
+            <div class="flex items-center space-x-4 text-xs text-gray-400">
+                <a href="#" class="hover:text-emerald-400 transition">Kebijakan Privasi</a>
+                <span>&bull;</span>
+                <a href="#" class="hover:text-emerald-400 transition">Syarat Akses</a>
+                <span>&bull;</span>
+                <a href="#" class="hover:text-emerald-400 transition">Support Admin</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Data Materi Aktif (Ubah bagian "url" di bawah ini sesuai dengan link yang kamu inginkan)
+        const modulesData = [
+            {
+                id: 1,
+                modCode: "Modul 01",
+                title: "Cara Membuat & Optimalisasi Akun LYNK.ID",
+                category: "Panduan LYNK.ID",
+                desc: "Panduan dasar mendaftar, verifikasi identitas, memilih username profesional, hingga mempercantik profil.",
+                duration: "10 Menit",
+                url: "https://lynk.id", // Ubah URL di sini
+                badgeColor: "emerald"
+            },
+            {
+                id: 2,
+                modCode: "Modul 02",
+                title: "Cara Menambah & Mengelola Produk Digital",
+                category: "Panduan LYNK.ID",
+                desc: "Langkah upload E-book, ecourse, template, menentukan harga, serta mengaktifkan pengiriman otomatis.",
+                duration: "15 Menit",
+                url: "https://lynk.id", // Ubah URL di sini
+                badgeColor: "emerald"
+            },
+            {
+                id: 3,
+                modCode: "Modul 03",
+                title: "Strategi Affiliate & Komisi Produk Orang Lain",
+                category: "Tips & Strategi",
+                desc: "Pelajari cara daftar affiliate, mengambil link rekomendasi, dan trik mempromosikannya tanpa modal.",
+                duration: "20 Menit",
+                url: "https://youtube.com", // Ubah URL di sini
+                badgeColor: "indigo"
+            },
+            {
+                id: 4,
+                modCode: "Modul 04",
+                title: "Setting Akun Pembayaran & Gateway Komisi",
+                category: "Panduan LYNK.ID",
+                desc: "Menghubungkan akun bank (BCA, Mandiri) dan E-Wallet (Gopay, Dana) agar pembeli bayar via QRIS.",
+                duration: "12 Menit",
+                url: "https://lynk.id", // Ubah URL di sini
+                badgeColor: "emerald"
+            },
+            {
+                id: 5,
+                modCode: "Modul 05",
+                title: "Cara Melakukan Pencairan Komisi (Withdraw)",
+                category: "Panduan LYNK.ID",
+                desc: "Panduan melakukan payout atau tarik saldo komisi penjualan ke rekening pribadi tepat waktu.",
+                duration: "08 Menit",
+                url: "https://lynk.id", // Ubah URL di sini
+                badgeColor: "emerald"
+            },
+            {
+                id: 6,
+                modCode: "Vault VIP",
+                title: "Bundle Asset & Template Promosi Eksklusif",
+                category: "Bonus Exclusive",
+                desc: "Dapatkan file PDF panduan ringkas, template Canva, serta copywriting script untuk promosi.",
+                duration: "Download",
+                url: "https://drive.google.com", // Ubah URL di sini
+                badgeColor: "indigo"
+            }
+        ];
+
+        let currentCategoryFilter = 'all';
+
+        // Filter Category Handler
+        function setCategoryFilter(category) {
+            currentCategoryFilter = category;
+            
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('bg-emerald-500', 'text-white');
+                btn.classList.add('bg-dark-card', 'text-gray-400');
+            });
+
+            if(category === 'all') document.getElementById('btn-cat-all').classList.add('bg-emerald-500', 'text-white');
+            if(category === 'Panduan LYNK.ID') document.getElementById('btn-cat-panduan').classList.add('bg-emerald-500', 'text-white');
+            if(category === 'Tips & Strategi') document.getElementById('btn-cat-tips').classList.add('bg-emerald-500', 'text-white');
+            if(category === 'Bonus Exclusive') document.getElementById('btn-cat-bonus').classList.add('bg-emerald-500', 'text-white');
+
+            renderModules();
+        }
+
+        // Render Module Cards Grid
+        function renderModules() {
+            const grid = document.getElementById('modulesGrid');
+            const searchVal = document.getElementById('searchInput').value.toLowerCase();
+            grid.innerHTML = '';
+
+            let filtered = modulesData.filter(item => {
+                const matchesCategory = (currentCategoryFilter === 'all' || item.category === currentCategoryFilter);
+                const matchesSearch = item.title.toLowerCase().includes(searchVal) || 
+                                      item.desc.toLowerCase().includes(searchVal) || 
+                                      item.category.toLowerCase().includes(searchVal);
+                return matchesCategory && matchesSearch;
+            });
+
+            document.getElementById('totalModulesCount').innerText = filtered.length;
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-1 md:col-span-3 text-center py-12 bg-dark-card border border-dark-border rounded-2xl">
+                        <i data-lucide="search-x" class="w-10 h-10 text-gray-500 mx-auto mb-3"></i>
+                        <p class="text-gray-400 text-sm">Tidak ada materi yang sesuai dengan pencarian kamu.</p>
+                    </div>
+                `;
+                lucide.createIcons();
+                return;
+            }
+
+            filtered.forEach(item => {
+                const badgeStyle = item.badgeColor === 'indigo' 
+                    ? 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20 hover:border-indigo-500/50' 
+                    : 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20 hover:border-emerald-500/50';
+
+                const cardHtml = `
+                    <div class="module-card group bg-dark-card border border-dark-border rounded-2xl p-6 transition duration-300 flex flex-col justify-between ${badgeStyle}">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-md text-xs font-semibold border ${badgeStyle}">
+                                    ${item.modCode}
+                                </span>
+                                <span class="text-xs text-gray-400 flex items-center gap-1">
+                                    <i data-lucide="clock" class="w-3.5 h-3.5"></i> ${item.duration}
+                                </span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-emerald-400 transition">${item.title}</h3>
+                            <p class="text-gray-400 text-xs mt-2 leading-relaxed">${item.desc}</p>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-dark-border/60 flex items-center justify-between gap-2">
+                            <span class="text-[11px] text-gray-500 font-medium truncate">${item.category}</span>
+                            
+                            <div class="flex items-center space-x-2">
+                                <button onclick="copyToClipboard('${item.url}')" title="Salin Link Akses" class="p-2 rounded-lg bg-dark-bg border border-dark-border text-gray-400 hover:text-white hover:border-emerald-500 transition">
+                                    <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                </button>
+                                <a href="${item.url}" target="_blank" class="inline-flex items-center space-x-1.5 px-3 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-semibold transition">
+                                    <span>Buka Akses</span>
+                                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += cardHtml;
+            });
+
+            lucide.createIcons();
+        }
+
+        // Copy Link to Clipboard
+        function copyToClipboard(text) {
+            const dummy = document.createElement('textarea');
+            document.body.appendChild(dummy);
+            dummy.value = text;
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+
+            showToast('Link berhasil disalin ke clipboard!');
+        }
+
+        // Show Toast Notification
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMessage').innerText = msg;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 2500);
+        }
+
+        // Accordion Toggle
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            content.classList.toggle('active');
+            if (content.classList.contains('active')) {
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Checklist Progress Tracker
+        function updateProgress() {
+            const items = document.querySelectorAll('.checklist-item');
+            const total = items.length;
+            let checkedCount = 0;
+            items.forEach(item => { if (item.checked) checkedCount++; });
+
+            const percentage = (checkedCount / total) * 100;
+            document.getElementById('progressBar').style.width = percentage + '%';
+            document.getElementById('progressText').innerText = `${checkedCount} / ${total} Selesai`;
+        }
+
+        // Run on Page Load
+        window.onload = function() {
+            renderModules();
+            lucide.createIcons();
+        };
+    </script>
+</body>
+</html>
