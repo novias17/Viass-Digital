@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akses 8 Juta++ Produk Digital - Viass Digital</title>
+    
+    <!-- Favicon Logo VD -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%2310B981;stop-opacity:1' /><stop offset='100%25' style='stop-color:%236366F1;stop-opacity:1' /></linearGradient></defs><rect width='100' height='100' rx='28' fill='url(%23grad)'/><text x='50%25' y='56%25' font-size='48' font-family='Plus Jakarta Sans, Arial, sans-serif' font-weight='800' fill='%23FFFFFF' text-anchor='middle' dominant-baseline='middle'>VD</text></svg>">
+
+    <!-- External Dependencies -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: {
+                            bg: '#0B0F17',
+                            card: '#111827',
+                            border: '#1F2937',
+                            hover: '#1E293B'
+                        },
+                        neon: {
+                            emerald: '#10B981',
+                            glow: '#059669',
+                            indigo: '#6366F1'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0B0F17;
+            color: #F3F4F6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .glow-emerald { box-shadow: 0 0 30px -5px rgba(16, 185, 129, 0.25); }
+
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-gray-100 min-h-screen flex flex-col antialiased bg-grid-pattern">
+
+    <!-- Header (Sama dengan Index) -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-dark-bg/80 border-b border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-indigo-600 flex items-center justify-center font-bold text-xl text-white shadow-lg glow-emerald">
+                    VD
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-extrabold text-xl tracking-tight bg-gradient-to-r from-white via-gray-200 to-emerald-400 bg-clip-text text-transparent">
+                        Viass Digital<span class="text-emerald-400">.</span>
+                    </span>
+                    <span class="text-[10px] text-gray-400 font-medium tracking-widest uppercase -mt-1">Link Hub & Manager</span>
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-2 sm:space-x-3">
+                <a href="index.html" class="inline-flex items-center space-x-2 px-3.5 py-2 rounded-lg bg-dark-card border border-dark-border text-xs sm:text-sm font-medium hover:border-emerald-500/50 hover:text-emerald-400 transition">
+                    <i data-lucide="home" class="w-4 h-4"></i>
+                    <span>Portal Utama</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow py-10 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full relative">
+        <!-- Efek Glow Background -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <!-- Tombol Kembali -->
+        <div class="mb-8 relative z-10">
+            <a href="index.html" class="inline-flex items-center space-x-2 text-sm text-gray-400 hover:text-emerald-400 transition-colors">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                <span>Kembali ke Daftar Modul</span>
+            </a>
+        </div>
+
+        <!-- Bagian Judul (Menggantikan Teks Notion) -->
+        <div class="mb-10 relative z-10 border-b border-dark-border pb-10 text-center sm:text-left">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-4 tracking-tight">Viass Digital.</h1>
+            <h2 class="text-2xl md:text-4xl font-bold bg-gradient-to-r from-emerald-400 via-teal-300 to-indigo-400 bg-clip-text text-transparent">
+                Akses 8 jt ++ Produk Digital Siap Jual
+            </h2>
+            <p class="text-gray-400 mt-4 max-w-2xl text-sm sm:text-base leading-relaxed mx-auto sm:mx-0">
+                Pilih dan buka link direktori Google Drive di bawah ini untuk mengunduh produk digital berlisensi ke dalam penyimpanan Anda.
+            </p>
+        </div>
+
+        <!-- List Link (Menggantikan List 1, 2, 3 di Notion) -->
+        <div class="space-y-4 relative z-10">
+            
+            <!-- Link 1 -->
+            <a href="https://drive.google.com/drive/folders/1B4j06gIMw6-1mLvHSKxvkxOwtIVoc2Hd" target="_blank" class="group flex items-center justify-between bg-dark-card border border-dark-border hover:border-emerald-500/50 rounded-2xl p-5 sm:p-6 transition-all duration-300 shadow-lg hover:shadow-emerald-500/10">
+                <div class="flex items-center space-x-5">
+                    <div class="w-12 h-12 shrink-0 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white group-hover:scale-110 transition-all duration-300">
+                        <span class="text-lg font-bold">1</span>
+                    </div>
+                    <div>
+                        <h3 class="text-base sm:text-lg font-bold text-gray-100 group-hover:text-emerald-400 transition-colors">8 Juta+ Produk Digital PLR MRR Versi Global V2</h3>
+                        <p class="text-xs text-gray-500 mt-1 hidden sm:block">Akses ke folder Google Drive utama database versi 2</p>
+                    </div>
+                </div>
+                <div class="pl-4">
+                    <div class="p-2.5 rounded-full bg-dark-bg border border-dark-border group-hover:border-emerald-500/50 group-hover:bg-emerald-500/10 transition-colors">
+                        <i data-lucide="external-link" class="w-5 h-5 text-gray-400 group-hover:text-emerald-400"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Link 2 -->
+            <a href="https://drive.google.com/drive/folders/1YwthX3UCZgOAL7KG6_SofUXVDvG9Wbhq" target="_blank" class="group flex items-center justify-between bg-dark-card border border-dark-border hover:border-emerald-500/50 rounded-2xl p-5 sm:p-6 transition-all duration-300 shadow-lg hover:shadow-emerald-500/10">
+                <div class="flex items-center space-x-5">
+                    <div class="w-12 h-12 shrink-0 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white group-hover:scale-110 transition-all duration-300">
+                        <span class="text-lg font-bold">2</span>
+                    </div>
+                    <div>
+                        <h3 class="text-base sm:text-lg font-bold text-gray-100 group-hover:text-emerald-400 transition-colors">8 Juta+ Produk Digital PLR MRR Versi Global V3</h3>
+                        <p class="text-xs text-gray-500 mt-1 hidden sm:block">Akses ke folder Google Drive utama database versi 3</p>
+                    </div>
+                </div>
+                <div class="pl-4">
+                    <div class="p-2.5 rounded-full bg-dark-bg border border-dark-border group-hover:border-emerald-500/50 group-hover:bg-emerald-500/10 transition-colors">
+                        <i data-lucide="external-link" class="w-5 h-5 text-gray-400 group-hover:text-emerald-400"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Link 3 -->
+            <a href="https://drive.google.com/drive/folders/1ZkEHp6l7S0c7LHRkpbKrgsPLY4tNf4Rx" target="_blank" class="group flex items-center justify-between bg-dark-card border border-dark-border hover:border-emerald-500/50 rounded-2xl p-5 sm:p-6 transition-all duration-300 shadow-lg hover:shadow-emerald-500/10">
+                <div class="flex items-center space-x-5">
+                    <div class="w-12 h-12 shrink-0 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white group-hover:scale-110 transition-all duration-300">
+                        <span class="text-lg font-bold">3</span>
+                    </div>
+                    <div>
+                        <h3 class="text-base sm:text-lg font-bold text-gray-100 group-hover:text-emerald-400 transition-colors">350.000+ E-Book Bundle PLR MRR</h3>
+                        <p class="text-xs text-gray-500 mt-1 hidden sm:block">Akses ke folder Google Drive koleksi e-book bundle</p>
+                    </div>
+                </div>
+                <div class="pl-4">
+                    <div class="p-2.5 rounded-full bg-dark-bg border border-dark-border group-hover:border-emerald-500/50 group-hover:bg-emerald-500/10 transition-colors">
+                        <i data-lucide="external-link" class="w-5 h-5 text-gray-400 group-hover:text-emerald-400"></i>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <!-- Footer (Sama dengan Index) -->
+    <footer class="border-t border-dark-border bg-dark-bg py-8 mt-12 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center space-x-2">
+                <div class="w-6 h-6 rounded-md bg-gradient-to-br from-emerald-500 to-indigo-600 flex items-center justify-center font-bold text-xs text-white">VD</div>
+                <span class="text-xs font-semibold text-gray-400">Viass Digital &copy; 2026. All rights reserved.</span>
+            </div>
+            
+            <div class="flex items-center space-x-4 text-xs font-medium text-gray-500">
+                <a href="#" class="hover:text-emerald-400 transition">Kebijakan Privasi</a>
+                <span>&bull;</span>
+                <a href="#" class="hover:text-emerald-400 transition">Syarat Akses</a>
+                <span>&bull;</span>
+                <a href="#" class="hover:text-emerald-400 transition">Support Admin</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Inisialisasi ikon Lucide
+        lucide.createIcons();
+    </script>
+</body>
+</html>

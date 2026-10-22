@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akses Materi Jualan di Lynk.id - Viass Digital</title>
+    
+    <!-- Favicon Logo VD Bergradasi -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%2310B981;stop-opacity:1' /><stop offset='100%25' style='stop-color:%236366F1;stop-opacity:1' /></linearGradient></defs><rect width='100' height='100' rx='28' fill='url(%23grad)'/><text x='50%25' y='56%25' font-size='48' font-family='Plus Jakarta Sans, Arial, sans-serif' font-weight='800' fill='%23FFFFFF' text-anchor='middle' dominant-baseline='middle'>VD</text></svg>">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+                    colors: {
+                        dark: { bg: '#0B0F17', card: '#111827', border: '#1F2937', hover: '#1E293B' },
+                        neon: { emerald: '#10B981', glow: '#059669', indigo: '#6366F1' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0B0F17; color: #F3F4F6; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
+        .glow-emerald { box-shadow: 0 0 30px -5px rgba(16, 185, 129, 0.25); }
+        .glow-indigo { box-shadow: 0 0 30px -5px rgba(99, 102, 241, 0.25); }
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .module-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .module-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(16, 185, 129, 0.5);
+            box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-gray-100 min-h-screen flex flex-col antialiased bg-grid-pattern">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-dark-bg/80 border-b border-dark-border">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-indigo-600 flex items-center justify-center font-bold text-xl text-white shadow-lg glow-emerald">
+                    VD
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-extrabold text-xl tracking-tight bg-gradient-to-r from-white via-gray-200 to-emerald-400 bg-clip-text text-transparent">
+                        Viass Digital<span class="text-emerald-400">.</span>
+                    </span>
+                    <span class="text-[10px] text-gray-400 font-medium tracking-widest uppercase -mt-1">Pusat Materi</span>
+                </div>
+            </div>
+            <a href="index.html" class="inline-flex items-center space-x-2 px-3.5 py-2 rounded-lg bg-dark-card border border-dark-border text-xs sm:text-sm font-medium hover:border-emerald-500/50 hover:text-emerald-400 transition">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                <span>Kembali ke Beranda</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full space-y-8">
+        
+        <!-- Banner / Judul Halaman dengan Efek Glow -->
+        <div class="relative bg-dark-card border border-dark-border rounded-3xl p-8 sm:p-12 text-center overflow-hidden shadow-2xl glow-emerald">
+            <div class="absolute -top-32 -right-32 w-72 h-72 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-32 -left-32 w-72 h-72 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="relative z-10 space-y-4">
+                <span class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold tracking-wide uppercase">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>Modul Eksklusif VIP</span>
+                </span>
+                
+                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                    Akses Materi Jualan di <span class="bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent">Lynk.id</span>
+                </h1>
+                
+                <p class="text-gray-400 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed">
+                    Panduan terstruktur langkah demi langkah untuk membangun, mengoptimasi, dan menghasilkan cuan konsisten dari produk digital melalui platform Lynk.id.
+                </p>
+            </div>
+        </div>
+
+        <!-- Daftar Materi / Modul -->
+        <div class="bg-dark-card border border-dark-border rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl">
+            <div class="flex items-center justify-between border-b border-dark-border pb-4">
+                <h2 class="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
+                    <i data-lucide="layers" class="text-emerald-400 w-5 h-5"><span></span></i>
+                    Daftar Modul Pembelajaran
+                </h2>
+                <span class="text-xs text-gray-400 bg-dark-bg px-3 py-1.5 rounded-lg border border-dark-border">5 Modul Tersedia</span>
+            </div>
+
+            <div class="grid grid-cols-1 gap-4">
+                <!-- Modul 1 -->
+                <a href="https://www.youtube.com/watch?v=wj82KnYA-wY" target="_blank" class="module-card p-5 rounded-2xl bg-dark-bg/80 border border-dark-border flex items-center justify-between group">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500/20 to-teal-500/20 border border-emerald-500/30 text-emerald-400 flex items-center justify-center font-extrabold text-sm shrink-0 shadow-inner">01</div>
+                        <div class="space-y-1">
+                            <div class="flex items-center gap-2">
+                                <span class="text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Dasar</span>
+                            </div>
+                            <h3 class="text-sm sm:text-base font-bold text-white group-hover:text-emerald-400 transition">Cara Membuat Akun LYNK ID</h3>
+                            <p class="text-xs text-gray-400 leading-relaxed">Panduan registrasi akun, verifikasi profil, dan pengaturan awal halaman penjualan Anda.</p>
+                        </div>
+                    </div>
+                    <div class="w-9 h-9 rounded-xl bg-dark-card border border-dark-border flex items-center justify-center text-gray-400 group-hover:text-white group-hover:bg-emerald-500 group-hover:border-emerald-500 transition shrink-0 ml-4 shadow-md">
+                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                    </div>
+                </a>
+
+                <!-- Modul 2 -->
+                <a href="https://www.youtube.com/watch?v=U35YxRn3-hY" target="_blank" class="module-card p-5 rounded-2xl bg-dark-bg/80 border border-dark-border flex items-center justify-between group">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500/20 to-teal-500/20 border border-emerald-500/30 text-emerald-400 flex items-center justify-center font-extrabold text-sm shrink-0 shadow-inner">02</div>
+                        <div class="space-y-1">
+                            <div class="flex items-center gap-2">
+                                <span class="text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Produk</span>
+                            </div>
+                            <h3 class="text-sm sm:text-base font-bold text-white group-hover:text-emerald-400 transition">Cara Menambah Produk Digitalnya</h3>
+                            <p class="text-xs text-gray-400 leading-relaxed">Teknik mengunggah produk digital, mengisi deskripsi memikat, dan mengatur link unduhan.</p>
+                        </div>
+                    </div>
+                    <div class="w-9 h-9 rounded-xl bg-dark-card border border-dark-border flex items-center justify-center text-gray-400 group-hover:text-white group-hover:bg-emerald-500 group-hover:border-emerald-500 transition shrink-0 ml-4 shadow-md">
+                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                    </div>
+                </a>
+
+                <!-- Modul 3 -->
+                <a href="https://www.youtube.com/shorts/3gtLE3gk4O0" target="_blank" class="module-card p-5 rounded-2xl bg-dark-bg/80 border border-dark-border flex items-center justify-between group">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500/20 to-teal-500/20 border border-emerald-500/30 text-emerald-400 flex items-center justify-center font-extrabold text-sm shrink-0 shadow-inner">03</div>
+                        <div class="space-y-1">
+                            <div class="flex items-center gap-2">
+                                <span class="text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">Afiliasi</span>
+                            </div>
+                            <h3 class="text-sm sm:text-base font-bold text-white group-hover:text-emerald-400 transition">Cara Affiliate Produk Orang Lain</h3>
+                            <p class="text-xs text-gray-400 leading-relaxed">Strategi mendaftar dan mempromosikan produk digital kreator lain untuk komisi tambahan.</p>
+                        </div>
+                    </div>
+                    <div class="w-9 h-9 rounded-xl bg-dark-card border border-dark-border flex items-center justify-center text-gray-400 group-hover:text-white group-hover:bg-emerald-500 group-hover:border-emerald-500 transition shrink-0 ml-4 shadow-md">
+                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                    </div>
+                </a>
+
+                <!-- Modul 4 -->
+                <a href="https://www.youtube.com/watch?v=g37GPuW08Uo" target="_blank" class="module-card p-5 rounded-2xl bg-dark-bg/80 border border-dark-border flex items-center justify-between group">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500/20 to-teal-500/20 border border-emerald-500/30 text-emerald-400 flex items-center justify-center font-extrabold text-sm shrink-0 shadow-inner">04</div>
+                        <div class="space-y-1">
+                            <div class="flex items-center gap-2">
+                                <span class="text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Keuangan</span>
+                            </div>
+                            <h3 class="text-sm sm:text-base font-bold text-white group-hover:text-emerald-400 transition">Cara Setting Akun Pembayaran Komisi</h3>
+                            <p class="text-xs text-gray-400 leading-relaxed">Menghubungkan rekening bank atau e-wallet dengan aman untuk penerimaan dana.</p>
+                        </div>
+                    </div>
+                    <div class="w-9 h-9 rounded-xl bg-dark-card border border-dark-border flex items-center justify-center text-gray-400 group-hover:text-white group-hover:bg-emerald-500 group-hover:border-emerald-500 transition shrink-0 ml-4 shadow-md">
+                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                    </div>
+                </a>
+
+                <!-- Modul 5 -->
+                <a href="https://www.youtube.com/watch?v=lp1XNlIoMq0" target="_blank" class="module-card p-5 rounded-2xl bg-dark-bg/80 border border-dark-border flex items-center justify-between group">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500/20 to-teal-500/20 border border-emerald-500/30 text-emerald-400 flex items-center justify-center font-extrabold text-sm shrink-0 shadow-inner">05</div>
+                        <div class="space-y-1">
+                            <div class="flex items-center gap-2">
+                                <span class="text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Pencairan</span>
+                            </div>
+                            <h3 class="text-sm sm:text-base font-bold text-white group-hover:text-emerald-400 transition">Cara Melakukan Pencairan Komisi</h3>
+                            <p class="text-xs text-gray-400 leading-relaxed">Panduan praktis melakukan penarikan saldo hasil penjualan ke rekening pribadi.</p>
+                        </div>
+                    </div>
+                    <div class="w-9 h-9 rounded-xl bg-dark-card border border-dark-border flex items-center justify-center text-gray-400 group-hover:text-white group-hover:bg-emerald-500 group-hover:border-emerald-500 transition shrink-0 ml-4 shadow-md">
+                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Tambahan: Materi Bonus & Panduan Ekstra -->
+        <div class="bg-dark-card border border-dark-border rounded-3xl p-6 sm:p-8 space-y-4 shadow-xl">
+            <h2 class="text-lg sm:text-xl font-bold text-white flex items-center gap-2 border-b border-dark-border pb-4 mb-4">
+                <i data-lucide="star" class="text-amber-400 w-5 h-5"></i>
+                Materi Bonus & Strategi
+            </h2>
+
+            <a href="https://docs.google.com/document/d/1Ra5d5tRCor1tCE5vQeuSdggoiZq5MlFSWnu57Jj_NRY/edit?tab=t.0" target="_blank" class="module-card p-4 rounded-xl bg-dark-bg/60 border border-dark-border hover:border-amber-500/40 flex items-center justify-between group">
+                <div class="flex items-center space-x-3">
+                    <span class="text-xl">🔥</span>
+                    <h3 class="text-sm sm:text-base font-bold text-white group-hover:text-amber-400 transition">30 Tips Pecah Telur di LYNK.ID</h3>
+                </div>
+                <i data-lucide="external-link" class="w-4 h-4 text-gray-500 group-hover:text-amber-400 transition"></i>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1IcblNg1yRWHBPSofOxDh2Hv486hLqwpO/view?usp=sharing" target="_blank" class="module-card p-4 rounded-xl bg-dark-bg/60 border border-dark-border hover:border-emerald-500/40 flex items-center justify-between group">
+                <div class="flex items-center space-x-3">
+                    <span class="text-xl">✅</span>
+                    <h3 class="text-sm sm:text-base font-bold text-white group-hover:text-emerald-400 transition">10 Step Cepat Bikin Produk Digital Kamu Laku</h3>
+                </div>
+                <i data-lucide="external-link" class="w-4 h-4 text-gray-500 group-hover:text-emerald-400 transition"></i>
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-dark-border bg-dark-bg py-8 mt-12 text-center text-xs text-gray-400">
+        Viass Digital &copy; 2026. All rights reserved.
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
